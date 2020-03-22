@@ -1,2 +1,2 @@
-# Homework1
+# Homework
 GoITHomeWork
