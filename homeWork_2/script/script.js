@@ -102,8 +102,6 @@ const showSum = function(numbers = [], input = prompt('Please, enter the number'
 
         return console.log(total);
     }
-
-
 };
 
 showSum();
