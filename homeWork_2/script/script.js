@@ -84,7 +84,6 @@ console.log(checkForSpam('[SPAM] How to earn fast money?'));
 
 
 
-
 const showSum = function(numbers = [], input = prompt('Please, enter the number')) {
 
     if (isNaN(input)) {
@@ -114,7 +113,7 @@ const showSum = function(numbers = [], input = prompt('Please, enter the number'
 showSum();
     
 
-let addNewUser = function() {
+const addNewUser = function() {
 
     const logins = ['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123'];
 
