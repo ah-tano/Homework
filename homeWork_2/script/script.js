@@ -12,9 +12,8 @@ logItems([5, 10, 15, 20, 25, 30, 35, 40, 45, 50]);
 
 const calculateEngravingPrice = function(message, pricePerWord) {
     const wordsArray = Array.from(message.split(' '));
-    let total;
-    total = wordsArray.length * pricePerWord;
-    return total; 
+    return wordsArray.length * pricePerWord;
+     
 };
 
 console.log(calculateEngravingPrice('Proin sociis natoque et magnis parturient montes mus', 10));
@@ -89,15 +88,12 @@ const showSum = function(numbers = [], input = prompt('Please, enter the number'
     if (isNaN(input)) {
         alert('Было введено не число, попробуйте еще раз');
         showSum();
-    };
-
-    if (input !== null) {
+    } else if (input !== null) {
 
         numbers.push(Number(input));
         showSum(numbers);
-
-    } else {
-
+        
+    } else { 
         let total = 0;
 
         for(let number of numbers) {
@@ -117,10 +113,8 @@ const addNewUser = function() {
 
     const logins = ['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123'];
 
-    let userLogin;
-
     const getLogin =  function() { 
-        return userLogin = prompt('Enter your login');
+        return prompt('Enter your login');
     }
 
 
@@ -150,21 +144,21 @@ const addNewUser = function() {
         
         let message;
 
-        if (isLoginValid(userLogin) === false) {
+        if (isLoginValid(login) === false) {
 
             message = 'Ошибка! Логин должен быть от 4 до 16 символов';
             return console.log(message);
         
         } 
 
-        if (isLoginUnique(logins, userLogin) === false) {
+        if (isLoginUnique(logins, login) === false) {
             
             message = 'Такой логин уже используется!';
             return console.log(message);
 
         } 
 
-            logins.push(userLogin);
+            logins.push(login);
             message = 'Логин успешно добавлен!';
             console.log(logins);
             return console.log(message);
