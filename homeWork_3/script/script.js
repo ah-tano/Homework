@@ -103,6 +103,16 @@ const countTotalSalary = function(employees) {
 
     return totalSalary;
 
+    // const salaryPerWorkers = [...Object.values(employees)];
+    
+    // for (const salary of salaryPerWorkers) {
+
+    //     totalSalary += salary;
+
+    // }
+
+    // return totalSalary;
+
 };
 
 console.log(countTotalSalary({}));
