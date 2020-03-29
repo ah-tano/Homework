@@ -234,7 +234,7 @@ console.log(calculateTotalPrice(products, 'Apple'));
 
         deposit(amount) {
 
-            const newTransactionDeposit = this.createTransaction(amount, type = 'deposit');
+            const newTransactionDeposit = this.createTransaction(amount, type);
 
             this.transactions.push(newTransactionDeposit);
 
@@ -253,7 +253,7 @@ console.log(calculateTotalPrice(products, 'Apple'));
 
         withdraw(amount) {
 
-            const newTransactionWithdraw = this.createTransaction(amount, type = 'withdraw');
+            const newTransactionWithdraw = this.createTransaction(amount, type);
 
             this.transactions.push(newTransactionWithdraw);
 
