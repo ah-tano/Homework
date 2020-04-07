@@ -3,27 +3,28 @@ const Account = function (user) {
     this.login = user.login;
     this.email = user.email;
 
-    this.getInfo = function() {
-        console.log(`Login: ${this.login}, Email: ${this.email}`);
-    }
-
 };
 
-// console.log(Account.prototype.getInfo); // function
+Account.prototype.getInfo = function() {
+    console.log(`Login: ${this.login}, Email: ${this.email}`);
+}
 
-// const mango = new Account({
-//   login: 'Mangozedog',
-//   email: 'mango@dog.woof',
-// });
 
-// mango.getInfo(); // Login: Mangozedog, Email: mango@dog.woof
+console.log(Account.prototype.getInfo); // function
 
-// const poly = new Account({
-//   login: 'Poly',
-//   email: 'poly@mail.com',
-// });
+const mango1 = new Account({
+  login: 'Mangozedog',
+  email: 'mango@dog.woof',
+});
 
-// poly.getInfo(); // Login: Poly, Email: poly@mail.com
+mango1.getInfo(); // Login: Mangozedog, Email: mango@dog.woof
+
+const poly1 = new Account({
+  login: 'Poly',
+  email: 'poly@mail.com',
+});
+
+poly1.getInfo(); // Login: Poly, Email: poly@mail.com
 
 
 
@@ -41,21 +42,21 @@ class User {
 
 };
 
-// const mango = new User({
-//     name: 'Mango',
-//     age: 2,
-//     followers: 20,
-//   });
+const mango2 = new User({
+    name: 'Mango',
+    age: 2,
+    followers: 20,
+  });
   
-//   mango.getInfo(); // User Mango is 2 years old and has 20 followers
+  mango2.getInfo(); // User Mango is 2 years old and has 20 followers
   
-//   const poly = new User({
-//     name: 'Poly',
-//     age: 3,
-//     followers: 17,
-//   });
+  const poly2 = new User({
+    name: 'Poly',
+    age: 3,
+    followers: 17,
+  });
   
-//   poly.getInfo(); // User Poly is 3 years old and has 17 followers
+  poly2.getInfo(); // User Poly is 3 years old and has 17 followers
 
 
 
@@ -97,21 +98,21 @@ class Storage {
     }
 };
 
-// const storage = new Storage([
-//     'Нанитоиды',
-//     'Пролонгер',
-//     'Железные жупи',
-//     'Антигравитатор',
-//   ]);
+const storage = new Storage([
+    'Нанитоиды',
+    'Пролонгер',
+    'Железные жупи',
+    'Антигравитатор',
+  ]);
   
-//   const items = storage.getItems();
-//   console.log(items); // [ "Нанитоиды", "Пролонгер", "Железные жупи", "Антигравитатор" ]
+  const items = storage.getItems();
+  console.log(items); // [ "Нанитоиды", "Пролонгер", "Железные жупи", "Антигравитатор" ]
   
-//   storage.addItem('Дроид');
-//   console.log(storage.items); // [ "Нанитоиды", "Пролонгер", "Железные жупи", "Антигравитатор", "Дроид" ]
+  storage.addItem('Дроид');
+  console.log(storage.items); // [ "Нанитоиды", "Пролонгер", "Железные жупи", "Антигравитатор", "Дроид" ]
   
-//   storage.removeItem('Пролонгер');
-//   console.log(storage.items); // [ "Нанитоиды", "Железные жупи", "Антигравитатор", "Дроид" ]
+  storage.removeItem('Пролонгер');
+  console.log(storage.items); // [ "Нанитоиды", "Железные жупи", "Антигравитатор", "Дроид" ]
 
 
 
@@ -155,16 +156,16 @@ class Storage {
     }
   }
 
-//   const builder = new StringBuilder('.');
+  const builder = new StringBuilder('.');
 
-// builder.append('^');
-// console.log(builder.value); // '.^'
+builder.append('^');
+console.log(builder.value); // '.^'
 
-// builder.prepend('^');
-// console.log(builder.value); // '^.^'
+builder.prepend('^');
+console.log(builder.value); // '^.^'
 
-// builder.pad('=');
-// console.log(builder.value); // '=^.^='
+builder.pad('=');
+console.log(builder.value); // '=^.^='
 
 
 
