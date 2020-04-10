@@ -1,0 +1,94 @@
+body {
+    min-width: 1015px;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 30px;
+    font-family: Arial, sans-serif;
+    color: #404040;
+    background-color: #faf8f0;
+    font-family: 'Montserrat', sans-serif;
+    }
+
+    h1 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 68px;
+        font-weight: bold;
+        padding: 0;
+        padding-top: 80px;
+        padding-bottom: 30px;
+        margin: 0;
+        text-align: center;
+        text-transform: uppercase;
+        filter: drop-shadow(2px 1px 2px #404040);
+    }
+
+    .profile-container {
+        width: 650px;
+        padding: 0;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin: 0 auto;
+    }
+
+    .container-for-all-profiles {
+        width: 600px;
+        padding: 10px;
+        margin: 0 auto;
+    }
+
+    .user-profile {
+        font-size: 15px;
+        position: relative;
+        width: 550px;
+        min-height: 150px;
+        margin-top: 20px;
+        text-align: center;
+        border: 1px solid #c4c4c4    ;
+        box-shadow: 3px 3px 3px 2px #f3f0f0;
+    }
+
+    .profile-info {
+        width: 370px;
+        margin: 0 auto;
+        padding: 15px;
+        padding-left: 130px;
+        list-style: none;
+        color: #404040;
+        line-height: 25px;
+    }
+
+    .profile-info li {
+        padding: 0;
+        margin: 0;
+        text-align: left;
+        line-break: auto;
+    }
+
+    .avatar {
+        position: absolute;
+        left: 7%;
+        top: 50px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        padding: 10px;
+    }
+
+
+    .users-info-table {
+        margin: 0 auto;
+        border-collapse: collapse;
+    }
+
+    .users-info-table th,
+    .users-info-table td {
+        border: 1px solid #404040;
+        padding: 5px;
+        text-align: center;
+    }
+    
+    .on{
+        color: rgb(93, 228, 93);
+        font-weight: bold;
+    }
