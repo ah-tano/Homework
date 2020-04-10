@@ -10,17 +10,30 @@
 // Количество элементов: 4
 
 const categories = document.querySelector('#categories');
-const allCategories = document.querySelectorAll('li.item');
+const allItems = document.querySelectorAll('li.item');
+
 
 function countCategories(categories) {
-  const categoriesTotalAmount = allCategories.length;
+  const categoriesTotalAmount = allItems.length;
 
   return console.log(`В списке ${categoriesTotalAmount} категории.`);
 }
+countCategories(allItems);
 
-countCategories(categories);
 
-console.log('categories: ', categories);
+
+
+const listItems1 = document.querySelectorAll('li.item:first-child ul li');
+const title1 = document.querySelector('li.item:first-child h2');
+
+const showItems1 = items => 
+  console.log(`Категория: ${title1.textContent}\nКоличество:  ${listItems1.length}`);
+
+showItems1(listItems1);
+
+
+
+
 
 
 
