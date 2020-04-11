@@ -12,22 +12,13 @@
 const categories = document.querySelector('#categories');
 const allItems = Array.from(document.querySelectorAll('li.item'));
 
-const titles = array => array.map((item, categoryTitle) => categoryTitle = item.querySelector('h2').textContent);
-const itemsAmountPerCategory = array => array.map(item => item.querySelectorAll('li').length);
-
-const getTitles = titles(allItems);
-const getItems = itemsAmountPerCategory(allItems);
-
-
-const showData = () => {
-  let info;
-  for (let categoryData of allItems) {
-    info = `Категория: ${categoryData.querySelector('h2').textContent}\nКоличество:  ${categoryData.querySelectorAll('li').length}`;
-    console.log(info);
-  }
+const showCategoryInfo = (array) => { 
+  array.forEach((category) => {
+    let categoryTitle = category.querySelector('h2').textContent;
+    let amount = category.querySelectorAll('li').length;
+    console.log(`Категория: ${categoryTitle}\nКоличество: ${amount}`);
+  }); 
 }
-
-showData();
 
 function countCategories(categories) {
   const categoriesTotalAmount = allItems.length;
@@ -36,6 +27,8 @@ function countCategories(categories) {
 }
 
 countCategories(allItems);
+showCategoryInfo(allItems);
+
 
 
 
