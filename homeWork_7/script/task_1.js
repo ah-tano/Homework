@@ -10,26 +10,36 @@
 // Количество элементов: 4
 
 const categories = document.querySelector('#categories');
-const allItems = document.querySelectorAll('li.item');
+const allItems = Array.from(document.querySelectorAll('li.item'));
 
+const titles = array => array.map((item, categoryTitle) => categoryTitle = item.querySelector('h2').textContent);
+const itemsAmountPerCategory = array => array.map(item => item.querySelectorAll('li').length);
+
+const getTitles = titles(allItems);
+const getItems = itemsAmountPerCategory(allItems);
+
+
+const showData = () => {
+  let info;
+  for (let categoryData of allItems) {
+    info = `Категория: ${categoryData.querySelector('h2').textContent}\nКоличество:  ${categoryData.querySelectorAll('li').length}`;
+    console.log(info);
+  }
+}
+
+showData();
 
 function countCategories(categories) {
   const categoriesTotalAmount = allItems.length;
 
   return console.log(`В списке ${categoriesTotalAmount} категории.`);
 }
+
 countCategories(allItems);
 
 
 
 
-const listItems1 = document.querySelectorAll('li.item:first-child ul li');
-const title1 = document.querySelector('li.item:first-child h2');
-
-const showItems1 = items => 
-  console.log(`Категория: ${title1.textContent}\nКоличество:  ${listItems1.length}`);
-
-showItems1(listItems1);
 
 
 
