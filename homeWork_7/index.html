@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="./style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap" rel="stylesheet">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GoIT Homework 7</title>
@@ -38,6 +40,25 @@
         </ul>
       </li>
     </ul>
-    <script src="./script/task_1.js" type="module"></script>
+    <ul id="ingredients"></ul>
+    <div class="gallery-container">
+      <div class="gallery_full-photo">
+        <img class="full-photo" src="https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" width="900" height="506">
+        <div class="gallery_arrow gallery_arrow-left"></div>
+        <div class="gallery_arrow gallery_arrow-right"></div>
+      </div>
+      
+      <p class="gallery_photo-previews"></p>
+  </div>
+
+  <div id="counter">
+    <button type="button" data-action="decrement">-1</button>
+    <span id="value">0</span>
+    <button type="button" data-action="increment">+1</button>
+  </div>
+    <!-- <script src="./script/task_1.js" type="module"></script> -->
+    <script src="./script/task_2.js" type="module"></script>
+    <script src="./script/task_3.js" type="module"></script>
+    <script src="./script/task_4.js"></script>
   </body>
 </html>
