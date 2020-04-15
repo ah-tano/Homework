@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="./style/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GoIT Homework 7</title>
@@ -40,25 +43,71 @@
         </ul>
       </li>
     </ul>
+
     <ul id="ingredients"></ul>
+
     <div class="gallery-container">
       <div class="gallery_full-photo">
-        <img class="full-photo" src="https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" width="900" height="506">
+        <img
+          class="full-photo"
+          src="https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+          width="900"
+          height="506"
+        />
         <div class="gallery_arrow gallery_arrow-left"></div>
         <div class="gallery_arrow gallery_arrow-right"></div>
       </div>
-      
       <p class="gallery_photo-previews"></p>
-  </div>
+    </div>
 
-  <div id="counter">
-    <button type="button" data-action="decrement">-1</button>
-    <span id="value">0</span>
-    <button type="button" data-action="increment">+1</button>
-  </div>
-    <!-- <script src="./script/task_1.js" type="module"></script> -->
+    <div id="counter">
+      <button type="button" data-action="decrement">-1</button>
+      <span id="value">0</span>
+      <button type="button" data-action="increment">+1</button>
+    </div>
+
+    <div class="input-section">
+      <input type="text" placeholder="Ваше имя?" id="name-input" />
+      <h1>Привет, <span id="name-output">незнакомец</span>!</h1>
+    </div>
+
+    <div class="input-validation">
+      <input
+        type="text"
+        id="validation-input"
+        data-length="6"
+        placeholder="Введи 6 символов"
+      />
+    </div>
+
+    <div class="font-control">
+      <input
+        id="font-size-control"
+        list="tickmarks"
+        type="range"
+        min="5"
+        ,
+        max="72"
+        ,
+        step="2"
+      />
+    </div>
+    <span id="text">Абракадабра!</span>
+
+    <div id="controls">
+      <input type="number" min="0" max="100" step="1" />
+      <button type="button" data-action="render">Создать</button>
+      <button type="button" data-action="destroy">Очистить</button>
+    </div>
+
+    <div id="boxes"></div>
+    <script src="./script/task_1.js" type="module"></script>
     <script src="./script/task_2.js" type="module"></script>
     <script src="./script/task_3.js" type="module"></script>
-    <script src="./script/task_4.js"></script>
+    <script src="./script/task_4.js" type="module"></script>
+    <script src="./script/task_5.js" type="module"></script>
+    <script src="./script/task_6.js" type="module"></script>
+    <script src="./script/task_7.js" type="module"></script>
+    <script src="./script/task_8.js" type="module"></script>
   </body>
 </html>

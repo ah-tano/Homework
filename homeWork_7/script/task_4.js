@@ -7,23 +7,22 @@
 let counterValue = 0;
 const value = document.getElementById('value');
 
-const decrement = document.querySelector('button:first-child');
-const decreaseValue = (num) => {
-    decrement.addEventListener('click', (num) => {
-        counterValue -= 1;
-        value.textContent = counterValue;
-    })
-}
+const decrement = document.querySelector('button[data-action="decrement"]');
+const decreaseValue = num => {
+  decrement.addEventListener('click', num => {
+    counterValue -= 1;
+    value.textContent = counterValue;
+  });
+};
 
 decreaseValue(value);
 
-const increment = document.querySelector('button:last-child');
-const increaseValue = (num) => {
-    increment.addEventListener('click', (num) => {
-        counterValue += 1;
-        value.textContent = counterValue;
-    })
-}
+const increment = document.querySelector('button[data-action="increment"]');
+const increaseValue = num => {
+  increment.addEventListener('click', num => {
+    counterValue += 1;
+    value.textContent = counterValue;
+  });
+};
 
 increaseValue(value);
-
