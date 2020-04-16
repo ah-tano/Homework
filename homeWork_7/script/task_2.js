@@ -1,5 +1,4 @@
 const ingredientsList = document.querySelector('#ingredients');
-
 const ingredients = [
   'Картошка',
   'Грибы',

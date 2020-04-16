@@ -1,5 +1,5 @@
-let counterValue = 0;
 const value = document.getElementById('value');
+let counterValue = 0;
 
 const decrement = document.querySelector('button[data-action="decrement"]');
 const decreaseValue = num => {
@@ -8,7 +8,6 @@ const decreaseValue = num => {
     value.textContent = counterValue;
   });
 };
-
 decreaseValue(value);
 
 const increment = document.querySelector('button[data-action="increment"]');
@@ -18,5 +17,4 @@ const increaseValue = num => {
     value.textContent = counterValue;
   });
 };
-
 increaseValue(value);

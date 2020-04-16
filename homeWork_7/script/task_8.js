@@ -1,10 +1,3 @@
-const amountField = document.querySelector('#controls input');
-const boxes = document.getElementById('boxes');
-const createBtn = document.querySelector('button[data-action="render"]');
-const destroyBtn = document.querySelector('button[data-action="destroy"]');
-let elementWidth = 30;
-let elementHeight = 30;
-
 const getRandomColor = () => {
   const x = Math.floor(Math.random() * 256);
   const y = Math.floor(Math.random() * 256);
@@ -13,6 +6,9 @@ const getRandomColor = () => {
 
   return bgColor;
 };
+
+let elementWidth = 30;
+let elementHeight = 30;
 
 const createElement = () => {
   let newElement = document.createElement('div');
@@ -24,6 +20,10 @@ const createElement = () => {
 
   return newElement;
 };
+
+const amountField = document.querySelector('#controls input');
+const boxes = document.getElementById('boxes');
+const createBtn = document.querySelector('button[data-action="render"]');
 
 const createBoxes = amount => {
   for (let i = 0; i < amount; i += 1) {
@@ -37,6 +37,8 @@ createBtn.addEventListener('click', () => {
   createBoxes(value);
   amountField.value = '';
 });
+
+const destroyBtn = document.querySelector('button[data-action="destroy"]');
 
 const destroyBoxes = () => {
   destroyBtn.addEventListener('click', () => {

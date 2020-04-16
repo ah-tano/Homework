@@ -16,18 +16,19 @@ const images = [
   },
 ];
 
-const galleryList = document.querySelector('.gallery_photo-previews');
-
-const createGallery = gallery => {
-  return gallery.map(photo => {
-    let picture = photo['url'];
-    let text = photo['alt'];
-    const pictureItem = `<button class="gallery_photo-preview"><img src="${picture}" alt="${text}" width = "900"></button>`;
-    return pictureItem;
+const createGallery = pictures => {
+  return pictures.map(picture => {
+    let pictureItem = picture['url'];
+    let text = picture['alt'];
+    const galleryItem = `<button class="gallery_photo-preview">
+    <img src="${pictureItem}" alt="${text}" width = "900">
+    </button>`;
+    return galleryItem;
   });
 };
 const photosList = createGallery(images).join('');
 
+const galleryList = document.querySelector('.gallery_photo-previews');
 const makeGallery = () => {
   galleryList.insertAdjacentHTML('afterbegin', photosList);
 };
