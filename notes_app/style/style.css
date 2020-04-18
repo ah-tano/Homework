@@ -1,0 +1,177 @@
+body {
+  padding: 0;
+  margin: 0 auto;
+  font-family: 'Open Sans', sans-serif;
+  background-image: url('https://images.pexels.com/photos/19670/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.page-container {
+  width: 1015px;
+  padding: 0;
+  margin: 0 auto;
+}
+
+#notes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#notes h1 {
+  font-family: 'Comfortaa', cursive;
+  font-size: 39px;
+  padding-top: 100px;
+  padding-bottom: 80px;
+  margin: 0;
+  align-self: center;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 70px;
+  font-weight: 900;
+  color: #383838;
+  filter: drop-shadow(1px 1px 2px #fafafad0);
+}
+
+#notes h2 {
+  font-family: 'Dancing Script', cursive;
+  align-self: center;
+  margin: 0;
+  padding-top: 20px;
+  padding-bottom: 60px;
+  text-transform: lowercase;
+  text-align: center;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 40px;
+  color: #97c9f1d5;
+  filter: drop-shadow(1px 1px 2px #fafafad0);
+}
+
+.notes-input-form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.notes-input-form input[type='text'] {
+  width: 500px;
+  min-height: 50px;
+  padding: 15px;
+  font-family: 'Comfortaa', cursive;
+  font-size: 16px;
+  border: 2px solid #eeeeee;
+  animation-name: waving;
+  animation-duration: 3s;
+}
+
+.notes-input-form::after {
+  position: absolute;
+  display: block;
+  width: 300px;
+  height: 100px;
+  content: '';
+  left: -233px;
+  bottom: 200px;
+  background: url('../img/hiclipart.com.png');
+  background-repeat: no-repeat;
+  background-position: 2px;
+  transform: rotate(75deg);
+}
+
+.notes-input-form::before {
+  position: absolute;
+  display: block;
+  width: 293px;
+  height: 100px;
+  content: '';
+  right: -230px;
+  bottom: 203px;
+  background: url('../img/hiclipart.com.png');
+  background-repeat: no-repeat;
+  background-position: 0px;
+  transform: rotate(104deg) scale(1, -1);
+}
+
+.notes-input-form-btn {
+  font-family: 'Comfortaa', cursive;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-top: 1em;
+  width: 185px;
+  height: 45px;
+  color: #383838;
+  border-radius: 15px;
+  border-color: #baecff;
+  background-color: rgba(255, 255, 255, 0.904);
+}
+
+#footer {
+  height: 500px;
+}
+
+@keyframes waving {
+  0% {
+    transform: translateX(2px);
+  }
+  20% {
+    transform: translateX(-2px);
+  }
+  40% {
+    transform: translateX(2px);
+  }
+  60% {
+    transform: translateX(-2px);
+  }
+  80% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(-2px);
+  }
+}
+
+.notes-output {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 1015px;
+  padding-top: 100px;
+  padding-bottom: 30px;
+}
+
+.notes-output .note {
+  position: relative;
+  box-sizing: border-box;
+  min-width: 80px;
+  min-height: 50px;
+  padding: 20px;
+  padding-top: 35px;
+  margin: 10px;
+  font-size: 20px;
+  align-self: center;
+  text-align: center;
+  border: 20px solid rgba(220, 228, 255, 0.815);
+  border-image-source: url('https://cdn1.iconfinder.com/data/icons/hawcons/32/700422-icon-1-cloud-512.png');
+  border-image-repeat: stretch;
+  border-image-slice: 170;
+  border-image-width: 30px 40px;
+}
+
+.delete-btn {
+  display: block;
+  position: absolute;
+  top: 7px;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  margin: 0;
+  background: url('https://cdn0.iconfinder.com/data/icons/elysium-icons/24/Cross.png');
+}
