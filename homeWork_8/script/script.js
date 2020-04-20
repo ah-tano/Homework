@@ -1,6 +1,6 @@
 // https://github.com/goitacademy/javascript-homework/tree/master/homework-08
 
-// Создай галерею с возможностью клика по ее элементам и просмотра полноразмерного изображения в модальном окне. 
+// Создай галерею с возможностью клика по ее элементам и просмотра полноразмерного изображения в модальном окне.
 // Разбей задание на несколько подзадач:
 
 // Создание и рендер разметки по массиву данных и предоставленному шаблону.
@@ -10,12 +10,8 @@
 // Закрытие модального окна по клику на кнопку button[data-action="close-modal"].
 // Очистка значения атрибута src элемента img.lightbox__image. Это необходимо для того, чтобы при следующем открытии модального окна, пока грузится изображение, мы не видели предыдущее.
 
-
-
 // Разметка элемента галереи
 // Ссылка на оригинальное изображение должна храниться в data-атрибуте source на элементе img, и указываться в href ссылки (это необходимо для доступности).
-
-
 
 // Дополнительно
 // Следующий функционал не обязателен при сдаче задания, но будет хорошей практикой по работе с событиями.
@@ -26,7 +22,8 @@
 
 import { default as images } from './gallery-items.js';
 
-const createElement = images => images.map(image => {
+const createElement = images =>
+  images.map(image => {
     const element = `
     <li class="gallery__item">
         <a
@@ -40,28 +37,44 @@ const createElement = images => images.map(image => {
             alt="${image.description}"
         />
         </a>
-    </li>`
+    </li>`;
 
     return element;
-})
+  });
 const elements = createElement(images);
 const elementsList = elements.join('');
 
 const gallery = document.querySelector('.js-gallery');
 const appendElements = elements => {
-    gallery.insertAdjacentHTML('beforeend', elements);
-}
+  gallery.insertAdjacentHTML('beforeend', elements);
+};
 appendElements(elementsList);
 
-const getUrls = images => images.map(image => {
+const getUrls = images =>
+  images.map(image => {
     const url = image.original;
     return url;
-})
+  });
 const urls = getUrls(images);
 
+console.log(gallery);
 
-gallery.forEach(element => {
-    element.addEventListener('click', galleryClickHandler);
-})
+const links = gallery.querySelectorAll('.gallery__item a');
+links.forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+  });
+});
 
+const lightbox = document.querySelector('.js-lightbox');
+const lightboxHandler = e => {
+  const currentImage = e.target;
+  const lightboxImage = document.querySelector('.lightbox__image');
+  lightbox.classList.add('is-open');
+  lightboxImage.src = currentImage.src;
+};
 
+const imagesList = gallery.querySelectorAll('.gallery__link img');
+imagesList.forEach(image => {
+  image.addEventListener('click', lightboxHandler);
+});
