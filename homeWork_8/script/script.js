@@ -33,7 +33,7 @@ const createElement = images =>
         <img
             class="gallery__image"
             src="${image.preview}"
-            data-source="${images.original}"
+            data-source="${image.original}"
             alt="${image.description}"
         />
         </a>
@@ -45,21 +45,13 @@ const elements = createElement(images);
 const elementsList = elements.join('');
 
 const gallery = document.querySelector('.js-gallery');
+
 const appendElements = elements => {
   gallery.insertAdjacentHTML('beforeend', elements);
 };
 appendElements(elementsList);
 
-const getUrls = images =>
-  images.map(image => {
-    const url = image.original;
-    return url;
-  });
-const urls = getUrls(images);
-
-console.log(gallery);
-
-const links = gallery.querySelectorAll('.gallery__item a');
+const links = Array.from(gallery.querySelectorAll('.gallery__item a'));
 links.forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
@@ -67,14 +59,63 @@ links.forEach(link => {
 });
 
 const lightbox = document.querySelector('.js-lightbox');
+const lightboxImage = document.querySelector('.lightbox__image');
+
 const lightboxHandler = e => {
   const currentImage = e.target;
-  const lightboxImage = document.querySelector('.lightbox__image');
+  const bigSizeImg = currentImage.dataset.source;
   lightbox.classList.add('is-open');
-  lightboxImage.src = currentImage.src;
+  lightboxImage.src = bigSizeImg;
+  lightboxImage.alt = currentImage.alt;
 };
 
 const imagesList = gallery.querySelectorAll('.gallery__link img');
 imagesList.forEach(image => {
   image.addEventListener('click', lightboxHandler);
 });
+
+const galleryItems = Array.from(gallery.querySelectorAll('.gallery__item img'));
+const arrowHandler = e => {
+  galleryItems.reduce((acc, item, index) => {
+    if (e.target.src === item.src) {
+      const counter = index;
+      if (e.keyCode === 37) {
+        document.addEventListener('keydown', (e) => {
+
+        })
+      }
+    }
+  }, e.target.src)
+}
+
+galleryItems.forEach(item => item.addEventListener('click', arrowHandler));
+// if (e.keyCode === 37) {
+//   document.addEventListener('keydown', (e) => { })
+// } 
+
+const closeLightboxBtn = document.querySelector('.lightbox__button');
+closeLightboxBtn.addEventListener('click', () => {
+  lightbox.classList.remove('is-open');
+  // lightboxImage.removeAttribute("src");
+})
+
+lightbox.addEventListener('click', (e) => {
+  const imageBox = document.querySelector('.lightbox__image');
+  if (e.target === imageBox) {
+    return;
+  }
+  lightbox.classList.remove('is-open');
+  // lightboxImage.removeAttribute("src");
+})
+
+document.addEventListener('keydown', (e) => {
+  if (e.keyCode === 27) {
+    lightbox.classList.remove('is-open');
+    // lightboxImage.removeAttribute("src");
+  }
+})
+
+
+
+
+
