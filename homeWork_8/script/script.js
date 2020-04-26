@@ -39,18 +39,21 @@ links.forEach(link => {
 
 const lightbox = document.querySelector('.js-lightbox');
 const lightboxImage = document.querySelector('.lightbox__image');
+
 const lightboxHandler = e => {
   const currentImage = e.target;
   const bigSizeImg = currentImage.dataset.source;
+
+  if (e.target === e.currentTarget) {
+    return;
+  }
+
   lightbox.classList.add('is-open');
   lightboxImage.src = bigSizeImg;
   lightboxImage.alt = currentImage.alt;
 };
 
-const imagesList = gallery.querySelectorAll('.gallery__link img');
-imagesList.forEach(image => {
-  image.addEventListener('click', lightboxHandler);
-});
+gallery.addEventListener('click', lightboxHandler);
 
 const closeLightboxBtn = document.querySelector('.lightbox__button');
 closeLightboxBtn.addEventListener('click', () => {
