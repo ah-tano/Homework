@@ -1,20 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Homework 11</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <button type="button" data-action="start">Start</button>
-        <button type="button" data-action="stop">Stop</button>
+      <button type="button" data-action="start">Start</button>
+      <button type="button" data-action="stop">Stop</button>
     </div>
-    <script src="./task_1.js" type="module"></script>
-</body>
 
+    <div class="timer" id="timer-1">
+      <div class="field">
+        <span class="value" data-value="days"></span>
+        <span class="label">Days</span>
+      </div>
+
+      <div class="field">
+        <span class="value" data-value="hours"></span>
+        <span class="label">Hours</span>
+      </div>
+
+      <div class="field">
+        <span class="value" data-value="mins"></span>
+        <span class="label">Minutes</span>
+      </div>
+
+      <div class="field">
+        <span class="value" data-value="secs"></span>
+        <span class="label">Seconds</span>
+      </div>
+    </div>
+
+    <div class="timer" id="timer-2">
+      <div class="field">
+        <span class="value" data-value="days"></span>
+        <span class="label">Days</span>
+      </div>
+
+      <div class="field">
+        <span class="value" data-value="hours"></span>
+        <span class="label">Hours</span>
+      </div>
+
+      <div class="field">
+        <span class="value" data-value="mins"></span>
+        <span class="label">Minutes</span>
+      </div>
+
+      <div class="field">
+        <span class="value" data-value="secs"></span>
+        <span class="label">Seconds</span>
+      </div>
+    </div>
+
+    <script src="./task_1.js" type="module"></script>
+    <script src="./task_2.js" type="module"></script>
+    <script src="./task_3.js" type="module"></script>
+  </body>
 </html>
