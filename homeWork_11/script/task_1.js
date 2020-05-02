@@ -24,15 +24,12 @@ const timer = {
     }
 
     this.isActive = true;
-    let randomColor;
+    let randomColorIndex;
 
     this.colorTimer = setInterval(() => {
-      randomColor = this.randomIntegerFromInterval(0, colors.length - 1);
-      colors.find((color, index) => {
-        if (index === randomColor) {
-          body.style.backgroundColor = color;
-        }
-      });
+      randomColorIndex = this.randomIntegerFromInterval(0, colors.length - 1);
+      console.log(randomColorIndex);
+      body.style.backgroundColor = colors[randomColorIndex];
     }, 1000);
   },
   stop() {

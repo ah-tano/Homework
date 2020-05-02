@@ -4,6 +4,8 @@ class CountdownTimer {
   constructor(selector, targetDate) {
     this.selector = selector;
     this.targetDate = targetDate;
+
+    this.reverseTimer();
   }
 
   reverseTimer() {
@@ -40,7 +42,4 @@ class CountdownTimer {
 }
 
 const timer1 = new CountdownTimer('#timer-1', new Date('May 18, 2020'));
-timer1.reverseTimer();
-
-const timer2 = new CountdownTimer('#timer-2', new Date('May 2, 2020'));
-timer2.reverseTimer();
+const timer2 = new CountdownTimer('#timer-2', new Date('May 3, 2020'));
