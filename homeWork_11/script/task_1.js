@@ -28,7 +28,6 @@ const timer = {
 
     this.colorTimer = setInterval(() => {
       randomColorIndex = this.randomIntegerFromInterval(0, colors.length - 1);
-      console.log(randomColorIndex);
       body.style.backgroundColor = colors[randomColorIndex];
     }, 1000);
   },
