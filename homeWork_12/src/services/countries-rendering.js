@@ -1,24 +1,23 @@
-
 export default {
+  getCountriesNames(data) {
+    return data.map(country => {
+      const name = country.name;
+      return name;
+    });
+  },
 
-    getCountriesNames(data) {
-        return data.map(country => {
-            const name = country.name;
-            return name;
-        })
-    },
+  createElements(countries) {
+    const list = countries
+      .map(country => {
+        const element = `<li>${country}</li>`;
+        return element;
+      })
+      .join('');
 
-    createElements(countries) {
-        const list = countries.map(country => {
-            const element = `<li>${country}</li>`
-            return element;
-        }).join('');
+    return list;
+  },
 
-        return list;
-    },
-
-    appendElements(elements, ref) {
-        return ref.insertAdjacentHTML('beforeend', elements)
-    },
-
-}
+  appendElements(elements, ref) {
+    return ref.insertAdjacentHTML('beforeend', elements);
+  },
+};

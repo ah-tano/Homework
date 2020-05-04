@@ -1,25 +1,26 @@
 // https://github.com/goitacademy/javascript-homework/tree/master/homework-12
-
 import './styles.css';
-import countryRendering from './services/countries-rendering.js';
+import countriesRendering from './services/countries-rendering.js';
 import countryTemplate from './templates/country-info.hbs';
-import fetchCountries from './services/fetchCountries.js'
-const debounce = require('lodash.debounce');
-const { error } = require('@pnotify/core');
+import fetchCountries from './services/fetchCountries.js';
 import '@pnotify/core/dist/BrightTheme.css';
-
+const { error } = require('@pnotify/core');
+const debounce = require('lodash.debounce');
 
 const input = document.getElementById('search');
 const countriesListField = document.querySelector('.countries-list');
 const reflectedCountry = document.querySelector('.selected-country');
 
-
 const inputHandler = () => {
+  if (input.value === '') {
+    return;
+  }
+
   fetchCountries(input.value).then(data => {
-    const listOfNames = countryRendering.getCountriesNames(data);
+    const listOfNames = countriesRendering.getCountriesNames(data);
 
     if (input.value !== '') {
-      reflectedCountry.innerHTML = ''
+      reflectedCountry.innerHTML = '';
     }
 
     if (countriesListField.innerHTML !== '') {
@@ -28,30 +29,31 @@ const inputHandler = () => {
 
     if (listOfNames.length === 1) {
       countriesListField.innerHTML = '';
+
       data.find(country => {
         const countryInfo = countryTemplate(country);
         reflectedCountry.insertAdjacentHTML('beforeend', countryInfo);
         input.value = '';
-      })
+      });
     }
 
     if (listOfNames.length - 1 <= 10 && listOfNames.length - 1 > 1) {
-      const elements = countryRendering.createElements(listOfNames);
-      countryRendering.appendElements(elements, countriesListField);
+      const elements = countriesRendering.createElements(listOfNames);
+      countriesRendering.appendElements(elements, countriesListField);
     }
 
     if (listOfNames.length - 1 > 10) {
       const myError = error({
-        title: "Please enter again!",
-        text: "Too many matches found. Please enter a more specific query!",
-        width: '320px',
+        title: 'Please enter again!',
+        text: 'Too many matches found. Please enter a more specific query!',
+        width: '280px',
         sticker: false,
         closer: false,
-        delay: 2000,
-      })
+        delay: 1500,
+        addClass: 'error-notification',
+      });
     }
   });
 };
 
-input.addEventListener('input', debounce(inputHandler, 800));
-
+input.addEventListener('input', debounce(inputHandler, 500));
