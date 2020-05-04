@@ -35,14 +35,10 @@ const inputHandler = () => {
         reflectedCountry.insertAdjacentHTML('beforeend', countryInfo);
         input.value = '';
       });
-    }
-
-    if (listOfNames.length - 1 <= 10 && listOfNames.length - 1 > 1) {
+    } else if (listOfNames.length <= 10 && listOfNames.length > 1) {
       const elements = countriesRendering.createElements(listOfNames);
       countriesRendering.appendElements(elements, countriesListField);
-    }
-
-    if (listOfNames.length - 1 > 10) {
+    } else if (listOfNames.length > 10) {
       const myError = error({
         title: 'Please enter again!',
         text: 'Too many matches found. Please enter a more specific query!',
