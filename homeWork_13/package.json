@@ -49,8 +49,13 @@
     "webpackbar": "^4.0.0"
   },
   "dependencies": {
+    "basiclightbox": "^5.0.3",
     "core-js": "^3.6.4",
     "handlebars": "^4.7.3",
-    "infinite-scroll": "^3.0.6"
+    "imagesloaded": "^4.1.4",
+    "infinite-scroll": "^3.0.6",
+    "jquery": "^3.5.1",
+    "lodash": "^4.17.15",
+    "masonry-layout": "^4.2.2"
   }
 }

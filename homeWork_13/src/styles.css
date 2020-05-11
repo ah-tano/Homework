@@ -1,4 +1,62 @@
 html {
-    background-color: #fcfcfc;
-  }
-  
+  background-color: #fcfcfc;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+#search-form {
+  width: 500px;
+  height: 15px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+
+#search {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 25px;
+  color: #2c2c2c;
+  width: 500px;
+  height: 30px;
+  padding: 10px 15px;
+}
+
+.grid {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grid__item {
+  float: left;
+  margin-bottom: 3px;
+  border: 1px solid #c4c4c4a4;
+}
+
+.grid__item img {
+  display: block;
+  max-width: 100%;
+}
+
+.grid__col-sizer {
+  width: 32%;
+}
+
+.grid__gutter-sizer {
+  width: 2%;
+}
+
+.stats {
+  text-align: center;
+}
+
+.grid p {
+  font-size: 14px;
+  display: inline-block;
+  padding: 5px;
+  margin: 3px;
+  text-align: center;
+}
